@@ -3,12 +3,13 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
-const _geist = Geist({ subsets: ["latin"] });
-const _geistMono = Geist_Mono({ subsets: ["latin"] });
+const geist = Geist({ subsets: ['latin'] })
+const geistMono = Geist_Mono({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'مهامي - إدارة المهام',
-  description: 'تطبيق إدارة المهام والإنجازات - من تطوير فريق ZIADPWA - المطور زياد يحيى زكريا',
+  description:
+    'تطبيق إدارة المهام والإنجازات - من تطوير فريق ZIADPWA - المطور زياد يحيى زكريا',
   generator: 'ZIADPWA',
   manifest: '/mahamey/manifest.json',
   appleWebApp: {
@@ -29,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ar" dir="rtl">
-      <body className="font-sans antialiased">
+      <body className={`${geist.className} ${geistMono.className} font-sans antialiased`}>
         {children}
         <Analytics />
       </body>

@@ -1,22 +1,26 @@
-export default function Home() {
-  return (
-    <main className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-indigo-900 via-purple-900 to-slate-900 text-white p-4">
-      <div className="text-center max-w-md">
-        <h1 className="text-4xl font-bold mb-4">مهامي</h1>
-        <p className="text-lg text-gray-300 mb-8">تطبيق إدارة المهام الذكي</p>
-
-        <a
-          href="/index.html"
-          className="inline-flex items-center gap-2 bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-xl text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105"
-        >
-          <span>افتح التطبيق</span>
-        </a>
-
-        <div className="mt-12 text-sm text-gray-400">
-          <p>من تطوير فريق ZIADPWA</p>
-          <p className="mt-1">المطور: زياد يحيى زكريا</p>
-        </div>
-      </div>
-    </main>
-  )
+{
+  "name": "مهامي - إدارة المهام",
+  "short_name": "مهامي",
+  "description": "تطبيق إدارة المهام والإنجازات",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#0f172a",
+  "theme_color": "#6366f1",
+  "icons": [
+    {
+      "src": "icons/icon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512x512.jpg",
+      "sizes": "1024x1024",
+      "type": "image/jpeg",
+      "purpose": "any maskable"
+    }
+  ]
 }

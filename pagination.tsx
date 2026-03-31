@@ -1,19 +1,13 @@
-'use client'
-
-import * as React from 'react'
-import * as LabelPrimitive from '@radix-ui/react-label'
-
 import { cn } from '@/lib/utils'
 
-function Label({
-  className,
-  ...props
-}: React.ComponentProps<typeof LabelPrimitive.Root>) {
+function Kbd({ className, ...props }: React.ComponentProps<'kbd'>) {
   return (
-    <LabelPrimitive.Root
-      data-slot="label"
+    <kbd
+      data-slot="kbd"
       className={cn(
-        'flex items-center gap-2 text-sm leading-none font-medium select-none group-data-[disabled=true]:pointer-events-none group-data-[disabled=true]:opacity-50 peer-disabled:cursor-not-allowed peer-disabled:opacity-50',
+        'bg-muted w-fit text-muted-foreground pointer-events-none inline-flex h-5 min-w-5 items-center justify-center gap-1 rounded-sm px-1 font-sans text-xs font-medium select-none',
+        "[&_svg:not([class*='size-'])]:size-3",
+        '[[data-slot=tooltip-content]_&]:bg-background/20 [[data-slot=tooltip-content]_&]:text-background dark:[[data-slot=tooltip-content]_&]:bg-background/10',
         className,
       )}
       {...props}
@@ -21,4 +15,14 @@ function Label({
   )
 }
 
-export { Label }
+function KbdGroup({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <kbd
+      data-slot="kbd-group"
+      className={cn('inline-flex items-center gap-1', className)}
+      {...props}
+    />
+  )
+}
+
+export { Kbd, KbdGroup }
